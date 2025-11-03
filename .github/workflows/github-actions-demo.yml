@@ -1,0 +1,13 @@
+name: GitHub Actions Demo
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "🎉 Workflow spuštěn událostí ${{ github.event_name }}"
+    - run: echo "🐧 Tento job běží na serveru ${{ runner.os }} hostovaném GitHubem"
+    - run: echo "🔎 Branch je ${{ github.ref }}, repositář ${{ github.repository }}"
+    - uses: actions/checkout@v5
+    - run: echo "💡 Kód repozitáře byl zkopírován do runneru"
+    - run: ls ${{ github.workspace }}
+    - run: echo "🍏 Stav jobu je ${{ job.status }}"
